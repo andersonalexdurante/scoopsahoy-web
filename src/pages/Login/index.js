@@ -1,27 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
-import api from '../../services/api'
 import './styles.css'
-
 import iceCream from '../../assets/iceCream.svg'
 import logo from '../../assets/logo.svg'
 
 export default function Login() {
 
+    const [senha, setSenha] = useState('')
+    const history = useHistory()
+
+    function handleLogin(e) {
+        e.preventDefault()
+
+        if(senha === "admin") {
+            history.push('/profile')
+        }
+        else {
+            alert('Falha no login, tente novamente.')
+        }
+    }
+
     return (
         <div className="logon-container">
-            <span id="text-background">SCOOPS AHOY</span>
+
             <img className="cream-image" src={iceCream} alt="Heroes" />
 
             <section className="form">
                 <img src={logo} alt="Scoops Ahoy"/>
 
-                <form >
-                    <h1>Login do administrador</h1>
+                <form onSubmit={handleLogin}>
+                    <h1>Login</h1>
 
                     <input 
                         placeholder="Senha"
-        
+                        value={senha}
+                        onChange={e => setSenha(e.target.value)}
                     />
                     <button className="button" type="submit" >Entrar</button>
 

@@ -5,13 +5,12 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .logon-container section img {
     width: 300px;
     height: 300px;
-   
 }
 
 .logon-container section.form {
@@ -25,15 +24,10 @@
     margin-bottom: 32px;
 }
 
-.logon-container img {
-    width: 500px;
-    height: 500px;
-    z-index: 2;
-}
-
-#text-background {
+.cream-image {
+    width: 800px;
+    height: 600px;
     position: absolute;
-    font-size: 200px;
-    opacity: 0.2;
-   
+    z-index: -1;
+    left: 550px
 }
