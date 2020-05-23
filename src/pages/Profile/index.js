@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
-import { FiPower } from 'react-icons/fi'
+import { FiPower, FiShoppingCart } from 'react-icons/fi'
+import { IoMdIceCream } from 'react-icons/io'
 
 import './styles.css'
 import api from '../../services/api'
@@ -49,13 +50,25 @@ export default function Profile() {
             <ul> 
                 {pedidos.map(pedido => (
                     <li key={pedido.id}>
-                        <strong>{`SENHA ${pedido.id}`}</strong>
-
-                        <strong>QUANTIDADE:</strong>
-                        <p>{pedido.quantidade}</p>
-
-                        <strong>PREÇO:</strong>
-                        <p>{pedido.preco}</p>
+                        
+                        <strong className="senha">
+                            SENHA: {pedido.id}
+                        </strong>
+                        <FiShoppingCart size="33" color="white" 
+                        style={{position: 'relative', left: 40, bottom: 45}} />
+                        
+                        <div style={{position: 'relative', bottom: 15}}>
+                            <IoMdIceCream size={22} color="#41414d"/>
+                            <strong style={{fontSize: 22, color: '#41414d'}}>
+                                Sorvete de {pedido.nome}
+                            </strong>
+                        </div>
+                        
+                        <strong className="quantidade">Quantidade: {pedido.quantidade}(X)</strong>
+                        <strong className="preco">Preço R$: {pedido.preco}</strong>
+                       
+                        <img className="imagem" src={pedido.imagem} width={90} height={140} />
+                        <button>Entregue</button>
                     </li>
                 ))}
             </ul>

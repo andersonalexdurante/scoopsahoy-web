@@ -53,3 +53,59 @@
     transition-duration: 1000ms;
     cursor: pointer;
 }
+
+.profile-container ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 24px;
+    list-style: none;
+}
+
+.profile-container ul li {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    height: 330px
+}
+
+.senha {
+    text-align: center;
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #5dbcd2;
+}
+
+.quantidade, .preco {
+    display: block;
+    color: #41414d;
+    font-size: large;
+}
+
+.quantidade {
+    margin-top: 10px;
+    margin-bottom: 60px;
+}
+
+.imagem {
+    position: absolute;
+    border-radius: 10px;
+    left: 340px;
+    bottom: 120px;
+    background-size: contain;
+}
+
+.profile-container ul button {
+    background-color: rgb(72, 224, 72);
+    border: 0;
+    padding: 15px;
+    border-radius: 30px;
+    color: white;
+    margin-top: 20px;
+    margin-left: 110px
+}
+
+
